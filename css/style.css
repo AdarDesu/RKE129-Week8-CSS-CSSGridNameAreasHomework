@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --MyPadding: 0.5rem; 
+}
+
+body{
+    background-color: #1e1e1e;
+}
+
+.container{
+    color: #ffffff;
+    display: grid;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    grid-template: 0.5fr 2.5fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header menu menu menu"
+        "hero hero hero hero"
+        "main main image image"
+        "main main extra extra"
+        "banner banner banner banner"
+    ;
+}
+
+main{
+    align-items: center;
+    background-color: #3d3d20;
+    display: grid;
+    grid-area: main;
+    padding: var(--MyPadding);
+}
+
+.header{
+    align-items: center;
+    background-color: #3d2020;
+    display: grid;
+    grid-area: header;
+    padding: var(--MyPadding);
+}
+
+.hero{
+    align-items: center;
+    background-color: #203d20;
+    display: grid;
+    grid-area: hero;
+    padding: var(--MyPadding);
+}
+
+.banner{
+    align-items: center;
+    background-color: #20203d;
+    display: grid;
+    grid-area: banner;
+    padding: var(--MyPadding);
+}
+
+.extra{
+    align-items: center;
+    background-color: #203d3d;
+    display: grid;
+    grid-area: extra;
+    padding: var(--MyPadding);
+}
+
+.image{
+    align-items: center;
+    background-color: #3d3d3d;
+    display: grid;
+    grid-area: image;
+    padding: var(--MyPadding);
+}
+
+.menu{
+    align-items: center;
+    background-color: #3d3d3d;
+    display: grid;
+    grid-area: menu;
+    padding: var(--MyPadding);
+}
+
+@media (max-width: 1024px){
+
+    .container{
+        grid-template: 0.5fr 1.5fr 2fr 1fr 1fr / 0.75fr 1.5fr 0.75fr;
+        grid-template-areas: 
+            "header header header"
+            "hero hero hero"
+            "menu main main"
+            "menu banner banner"
+            "menu extra image"
+        ;
+    }
+}
+
+@media (max-width: 480px){
+
+    .container{
+        grid-template: 0.5fr 0.5fr 1.25fr 2fr 1fr 1fr 1fr / 1fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+        ;
+    }
+}
